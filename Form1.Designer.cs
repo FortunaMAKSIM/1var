@@ -114,9 +114,9 @@
 
         #endregion
 
-        private Button LogBt;
-        private TextBox LoginTb;
-        private TextBox PasswordTb;
+        public Button LogBt;
+        public TextBox LoginTb;
+        public TextBox PasswordTb;
         private Label label1;
         private Label label2;
         private Label label3;

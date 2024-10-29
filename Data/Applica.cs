@@ -28,8 +28,8 @@ namespace _1var.Data
         // Свойство, с которым будете работать в коде
         public int? EquipmentId
         {
-            get { return EquipmentDb.HasValue ? (int)EquipmentDb.Value : (int?)null; } // Преобразуем float в int
-            set { EquipmentDb = value.HasValue ? (float?)value.Value : null; } // Сохраняем значение как float
+            get { return (int)(EquipmentDb ?? 0); } // Преобразуем float в int
+            set { EquipmentDb = value; } // Сохраняем значение как float
         }
 
         public string? FaultType { get; set; }
@@ -42,14 +42,8 @@ namespace _1var.Data
         public string? CauseOfMalfunction { get; set; }
         public int? ExecCost { get; set; }
 
-        // Навигационные свойства (опционально)
+        // Навигационные свойства
         public virtual Client Client { get; set; }
         public virtual Staff Staff { get; set; }
-
-        // Метод для получения значения EquipmentId с учетом возможного null
-        public int GetEquipmentIdOrDefault()
-        {
-            return EquipmentId ?? 0; // Возвращаем 0, если EquipmentId равно null
-        }
     }
 }

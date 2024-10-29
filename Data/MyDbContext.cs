@@ -21,12 +21,5 @@ namespace _1var.Data
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<StatusHistory> StatusHistories { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Applica>()
-                .HasIndex(a => a.Number)
-                .IsUnique();
-        }
-
     }
 }
